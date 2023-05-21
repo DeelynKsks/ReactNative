@@ -8,20 +8,31 @@ export const styles = StyleSheet.create({
       alignItems: 'center',
       justifyContent: 'center',
     },
+    container2: {
+      borderRadius: 140,
+      marginTop: 20,
+      height: 50,
+      alignItems: 'center',
+      justifyContent: 'center',
+    },
     imageMain: {
       width: 350,
       height: 330
     },
     text: {
-        fontFamily: 'Bloodcrowsc',
-        fontSize: 100,
-        color: '#ffffff'
+        fontFamily: 'Bloodcrowc',
+        fontSize: 40,
+        color: '#000000'
+    },
+    button: {
+      width: 30,
+      height: 10
     }
   });
 
 // Código para cargar fuentes
 export const loadCustomFonts = async() => {
   await Font.loadAsync({
-    'Bloodcrowsc': require('@assets/Fonts/bloodcrowsc.ttf'),
+    'Bloodcrowc': require('@assets/Fonts/bloodcrowc.ttf'),
   });
 }

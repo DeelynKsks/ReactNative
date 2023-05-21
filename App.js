@@ -1,8 +1,9 @@
 import { useEffect, useState } from 'react';
-import { StatusBar } from 'expo-status-bar';
 import { Image, StyleSheet, Text, View } from 'react-native';
 import { styles, loadCustomFonts } from './src/Styles/Styles';
-import knyLogo from './src/Images/5ede4a3fb760540004f2c5e9.png'
+import Home from './src/Views/Home';
+// import { StatusBar } from 'expo-status-bar';
+// import knyLogo from './src/Images/5ede4a3fb760540004f2c5e9.png'
 
 export default function App() {
 
@@ -23,8 +24,7 @@ export default function App() {
 
   return (
     <View style={styles.container}>
-      <Image style={styles.imageMain} source={knyLogo}/>
-      <Text style={styles.text}>Carga completa</Text>
+      <Home/>
     </View>
   );
 }
