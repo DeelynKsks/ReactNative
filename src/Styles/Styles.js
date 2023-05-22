@@ -23,9 +23,14 @@ export const styles = ScaledSheet.create({
       marginTop: '140@s'
     },
     text: {
-        fontFamily: 'Bloodcrowc',
-        fontSize: '40@s',
-        color: '#000000'
+      fontFamily: 'Bloodcrowc',
+      fontSize: '40@s',
+      color: '#000000'
+    },
+    textWhite: {
+      fontFamily: 'Bloodcrowc',
+      fontSize: '40@s',
+      color: '#ffffff'
     },
     button: {
       width: '30@s',
@@ -37,5 +42,6 @@ export const styles = ScaledSheet.create({
 export const loadCustomFonts = async() => {
   await Font.loadAsync({
     'Bloodcrowc': require('@assets/Fonts/bloodcrowc.ttf'),
+    'Bloodcrowsc': require('@assets/Fonts/bloodcrowsc.ttf')
   });
 }
