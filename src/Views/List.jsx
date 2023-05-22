@@ -1,11 +1,12 @@
 import React from 'react'
 import { FlatList, View } from 'react-native'
+import { styles } from './../Styles/Styles';
 
 function List() {
   return (
-    <View>
+    <View style={styles.container}>
         <FlatList>
-            
+
         </FlatList>
     </View>
   )

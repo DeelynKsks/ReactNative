@@ -12,7 +12,7 @@ function Home(props) {
     { title: 'List', path: 'List' }
   ]
 
-  const renderItem = ({ item }) => <CoolButton title={item.title} action={() => navigation.navigate(item.path)} />
+  const renderItem = ({ item }) => <CoolButton title={'Entrar'} action={() => navigation.navigate(item.path)} />
 
   return (
     <View style={styles.container}>

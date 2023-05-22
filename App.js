@@ -30,8 +30,16 @@ export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator initialRouteName="Home">
-        <Stack.Screen name="Home" component={Home}/>
-        <Stack.Screen name="List" component={List}/>
+        <Stack.Screen name="Home" component={Home} options={{
+          headerShown: false,
+        }}/>
+
+        <Stack.Screen name="List" component={List} options={{
+          title: 'Characters',
+          headerStyle: {
+            backgroundColor: '#ee1c25'
+          }
+        }}/>
       </Stack.Navigator>
     </NavigationContainer>
   );
