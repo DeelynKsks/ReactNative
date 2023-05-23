@@ -12,7 +12,7 @@ function List() {
   const [ columns, setColumns ] = useState(2)
   const [loading, setLoading] = useState(true)
 
-  const url = 'https://demon-slayer-api.onrender.com/v1?limit=20'
+  const url = 'https://demon-slayer-api.onrender.com/v1'
 
   const handleColumnSelect = (selectedColumns) => {
     setColumns(selectedColumns)

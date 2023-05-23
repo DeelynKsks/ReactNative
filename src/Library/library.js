@@ -7,5 +7,9 @@ export const library = {
             .catch(err => console.log(err))
             
         return consulta
+    },
+    extractImage: (urlImage) => {
+        const regex = /(.png\/).*/
+        return urlImage.replace(regex, '$1')
     }
 }
