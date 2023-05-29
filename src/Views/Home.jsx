@@ -9,7 +9,8 @@ function Home(props) {
   const {navigation} = props
 
   const views = [
-    { title: 'List', path: 'List' }
+    { title: 'List', path: 'List' },
+    // { title: 'Character', path: 'Character' }
   ]
 
   const renderItem = ({ item }) => <CoolButton title={'Entrar'} action={() => navigation.navigate(item.path)} />

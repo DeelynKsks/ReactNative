@@ -9,13 +9,13 @@ export const styles = ScaledSheet.create({
       justifyContent: 'center',
     },
     container2: {
-      borderRadius: '140@s',
+      borderRadius: '30@s',
       marginTop: '20@s',
-      height: '50@s',
+      height: '30@s',
       alignItems: 'center',
       justifyContent: 'center',
-      paddingLeft: '30@s',
-      paddingRight: '30@s'
+      paddingLeft: '10@s',
+      paddingRight: '10@s'
     },
     imageMain: {
       width: '250@s',
@@ -24,12 +24,12 @@ export const styles = ScaledSheet.create({
     },
     text: {
       fontFamily: 'Bloodcrowc',
-      fontSize: '40@s',
+      fontSize: '20@s',
       color: '#000000'
     },
     textWhite: {
       fontFamily: 'Bloodcrowc',
-      fontSize: '40@s',
+      fontSize: '30@s',
       color: '#ffffff'
     },
     button: {
