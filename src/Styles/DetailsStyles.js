@@ -15,10 +15,12 @@ export const DetailsStyles = ScaledSheet.create({
     },
     FullBodyImage: {
         // flex: 1,
-        // width: '100%',
-        // height: '50@s',
+        width: '300@s',
+        height: '280@s',
         borderRadius: '8@s',
-        resizeMode: 'cover'
+        resizeMode: 'cover',
+        borderWidth: 2,
+        borderColor: '#ffffff',
         // marginBottom: '10@s',
     }
 })

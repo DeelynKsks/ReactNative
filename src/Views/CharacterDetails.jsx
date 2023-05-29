@@ -48,9 +48,9 @@ function CharacterDetails({route}) {
 
   return (
     <View style={styles.container}>
-      <View role='img' style={DetailsStyles.FullBody}>
-        <Image style={DetailsStyles.FullBodyImage} source={{uri: character.Gallery.Category.CharacterGallery.FullBody,}}/>
-      </View>
+      {/* <View style={DetailsStyles.FullBody}> */}
+        <Image style={DetailsStyles.FullBodyImage} source={{uri: 'https://res.cloudinary.com/dzgetf0y5/image/upload/v1685320857/DemonSlayerApi/Characters/Tanjiro%20Kamado/CharacterGallery/090331f4fb58f4847682d7959383b72c_a1jl7s.png'}}/>
+      {/* </View> */}
     </View>
   );
 }
