@@ -15,7 +15,11 @@ function List() {
   // const [ columns, setColumns ] = useState(2)
   const [loading, setLoading] = useState(true)
 
+<<<<<<< HEAD
   const url = 'http://192.168.1.5:4700/getAll'
+=======
+  const url = 'https://demon-slayer-api.onrender.com/v1'
+>>>>>>> f97831842c3ae0bd0d1abae1dfee09d3af905b13
 
   // const handleColumnSelect = (selectedColumns) => {
   //   setColumns(selectedColumns)

@@ -7,6 +7,7 @@ export const library = {
             
         return consulta
     },
+<<<<<<< HEAD
     getCharacter: async (url, character) => {
         const response = await fetch(url, {
           method: 'POST',
@@ -19,5 +20,10 @@ export const library = {
         .catch(err => console.log(err))
 
         return response
+=======
+    extractImage: (urlImage) => {
+        const regex = /(.png\/).*/
+        return urlImage.replace(regex, '$1')
+>>>>>>> f97831842c3ae0bd0d1abae1dfee09d3af905b13
     }
 }
