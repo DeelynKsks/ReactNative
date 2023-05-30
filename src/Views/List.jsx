@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { FlatList, Text, View } from 'react-native'
 import { styles } from './../Styles/Styles';
 import { library } from './../Library/library';
+import {IPURL} from '@env'
 // import ColumnSelector from './../Components/ColumnSelector';
 import Card from '../Components/Card';
 // import { useNavigation } from '@react-navigation/native';
@@ -15,8 +16,8 @@ function List() {
   // const [ columns, setColumns ] = useState(2)
   const [loading, setLoading] = useState(true)
 
-
-  const url = 'http://192.168.1.5:4700/getAll'
+  const url = `${IPURL}getAll`
+  
   // const url = 'https://demon-slayer-api.onrender.com/v1'
 
   // const handleColumnSelect = (selectedColumns) => {

@@ -1,15 +1,16 @@
 import { useEffect, useState } from 'react';
-import { Text, View, Image } from 'react-native';
+import { Text, View, Image, ScrollView } from 'react-native';
 import { styles } from '../Styles/Styles';
 import { library } from '../Library/library';
 import { DetailsStyles } from '../Styles/DetailsStyles';
+import { IPURL } from '@env';
 
 function CharacterDetails({route}) {
   const { selectedName } = route.params;
   const [character, setCharacter] = useState([])
   const [loading, setLoading] = useState(true)
 
-  const url = 'http://192.168.1.5:4700/character'
+  const url = `${IPURL}character`
 
   useEffect(() => {
     const saveData = async () => {
@@ -48,9 +49,24 @@ function CharacterDetails({route}) {
 
   return (
     <View style={styles.container}>
-      {/* <View style={DetailsStyles.FullBody}> */}
-        <Image style={DetailsStyles.FullBodyImage} source={{uri: 'https://res.cloudinary.com/dzgetf0y5/image/upload/v1685320857/DemonSlayerApi/Characters/Tanjiro%20Kamado/CharacterGallery/090331f4fb58f4847682d7959383b72c_a1jl7s.png'}}/>
-      {/* </View> */}
+      <ScrollView contentContainerStyle={DetailsStyles.scrollContainer}>
+        
+          <Image style={DetailsStyles.FullBodyImage} source={{uri: character.Gallery.Category.CharacterGallery.FullBody}}/>
+        
+        <View>
+          <Text style={[styles.textWhite, {marginTop: '10%'}]}>
+              {character.Name}
+          </Text>
+        </View>
+        <View style={DetailsStyles.containerData}>
+          <Text style={styles.textWhite}>Características</Text>
+          <Text style={styles.textWhite}>Características</Text>
+          <Text style={styles.textWhite}>Características</Text>
+          <Text style={styles.textWhite}>Características</Text>
+          <Text style={styles.textWhite}>Características</Text>
+          <Text style={styles.textWhite}>Características</Text>
+        </View>
+      </ScrollView>
     </View>
   );
 }
