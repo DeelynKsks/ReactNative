@@ -3,14 +3,14 @@ import { Text, View, Image, ScrollView } from 'react-native';
 import { styles } from '../Styles/Styles';
 import { library } from '../Library/library';
 import { DetailsStyles } from '../Styles/DetailsStyles';
-import { IPURL } from '@env';
+import { LOCALIPURL } from '@env';
 
 function CharacterDetails({route}) {
   const { selectedName } = route.params;
   const [character, setCharacter] = useState([])
   const [loading, setLoading] = useState(true)
 
-  const url = `${IPURL}character`
+  const url = `${LOCALIPURL}:4700/character`
 
   useEffect(() => {
     const saveData = async () => {

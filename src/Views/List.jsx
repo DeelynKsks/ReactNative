@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react'
-import { FlatList, Text, View } from 'react-native'
+import { FlatList, Text, TextInput, View } from 'react-native'
 import { styles } from './../Styles/Styles';
 import { library } from './../Library/library';
-import {IPURL} from '@env'
+import {LOCALIPURL} from '@env'
+import Icon from 'react-native-vector-icons/FontAwesome';
 // import ColumnSelector from './../Components/ColumnSelector';
 import Card from '../Components/Card';
 // import { useNavigation } from '@react-navigation/native';
@@ -13,10 +14,12 @@ function List() {
   // const navigation = useNavigation();
 
   const [ dataApi, setDataApi ] = useState([])
+  const [filteredData, setFilteredData] = useState([]);
+  const [searchText, setSearchText] = useState('');
   // const [ columns, setColumns ] = useState(2)
   const [loading, setLoading] = useState(true)
-
-  const url = `${IPURL}getAll`
+  const url = `${LOCALIPURL}:4700/getAll`
+  
   
   // const url = 'https://demon-slayer-api.onrender.com/v1'
 
@@ -24,9 +27,22 @@ function List() {
   //   setColumns(selectedColumns)
   // }
 
+  const handleSearch = (text) => {
+    setSearchText(text);
+    filterData(text);
+  };
+
+  const filterData = (text) => {
+    const filtered = dataApi.filter((item) =>
+      item.Name.toLowerCase().includes(text.toLowerCase())
+    );
+    setFilteredData(filtered.length > 0 ? filtered : []);
+  };
+
   const handleDeleteCard = (id) => {
     // Elimina la tarjeta con el ID correspondiente del estado
-    setDataApi((prevData) => prevData.filter((card) => card.id !== id));
+    setDataApi((prevData) => prevData.filter((card) => card._id !== id));
+    setFilteredData((prevData) => prevData.filter((card) => card._id !== id));
   };
 
   const handleCardPress = (selectedName) => {
@@ -36,7 +52,11 @@ function List() {
 
   const renderItem = ({ item }) => {    
     return(
-      <Card data={item} onDelete={handleDeleteCard} onPress={handleCardPress}/>
+      <Card
+      data={item}
+      // onDeleteFiltered={handleDeleteFiltered} // Asegúrate de pasar onDeleteFiltered aquí
+      onDelete={handleDeleteCard}
+      onPress={handleCardPress}/>
     )
   }
 
@@ -77,17 +97,41 @@ function List() {
 
   return (
     <View style={styles.container}>
-        {/* <ColumnSelector onSelect={handleColumnSelect}/> */}
-        <FlatList
-          data={dataApi}
-          renderItem={renderItem}
-          // key={dataApi}
-          numColumns={2}
-          keyExtractor={(item) => item._id}
-          // contentContainerStyle={gridStyles.listContainer}
-        >
+        <View style={styles.inputContainer}>
+          <TextInput
+            color='white'
+            style={styles.searchInput}
+            placeholder="Buscar personaje"
+            placeholderTextColor="gray"
+            value={searchText}
+            onChangeText={handleSearch}
+            // renderLeftAccessory={() => (
+            //   <Icon name="search" size={18} color="white" />
+            // )}
+          />
+          
+        </View>
+          {/* <ColumnSelector onSelect={handleColumnSelect}/> */}
+          <FlatList
+            data={filteredData.length > 0 ? filteredData : dataApi}
+            renderItem={renderItem}
+            // key={dataApi}
+            numColumns={2}
+            keyExtractor={(item) => item._id}
+            contentContainerStyle={styles.flatListContent}
+          >
 
-        </FlatList>
+          </FlatList>
+          {/* <View style={styles.cardContainer}>
+          {dataApi.map((item) => (
+            <Card
+              key={item._id}
+              data={item}
+              onDelete={handleDeleteCard}
+              onPress={handleCardPress}
+            />
+          ))}
+          </View> */}
     </View>
   )
 }

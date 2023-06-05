@@ -1,20 +1,31 @@
 import { StyleSheet } from 'react-native';
+import { Dimensions } from 'react-native';
 import { moderateScale, ScaledSheet } from 'react-native-size-matters';
+
+const windowWidth = Dimensions.get('window').width;
+
 export const cardStyles = ScaledSheet.create({
     cardContainer: {
-      borderRadius: '8@s',
+      width: moderateScale(183),
+      marginHorizontal: moderateScale(10),
+      borderRadius: moderateScale(8),
       backgroundColor: '#000000',
-      padding: '10@s',
-      margin: '5@s',
+      padding: moderateScale(10),
       alignItems: 'center',
-      borderWidth: 4,
-      borderColor: '#ffffff'
+      borderWidth: moderateScale(4),
+      borderColor: '#ffffff',
+      // width: windowWidth * 0.45, // Ajusta el ancho de las tarjetas al 45% del ancho de la pantalla
+      // marginHorizontal: windowWidth * 0.025, // Agrega un margen horizontal al 2.5% del ancho de la pantalla
+      marginTop: '5@s', // Espaciado entre las tarjetas
+      marginBottom: '5@s'
+      // marginLeft: moderateScale(10),
+      // marginRight: moderateScale(10),
     },
     cardImage: {
       width: '100%',
-      height: '150@s',
-      borderRadius: '8@s',
-      marginBottom: '10@s',
+      height: moderateScale(150),
+      borderRadius: moderateScale(8),
+      marginBottom: moderateScale(10),
     },
     name: {
       fontFamily: 'Bloodcrowc',
