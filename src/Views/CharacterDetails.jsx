@@ -48,8 +48,34 @@ function CharacterDetails({route}) {
   }
 
   return (
-    <View style={styles.container}>
       <ScrollView contentContainerStyle={DetailsStyles.scrollContainer}>
+        <Text style={styles.textWhite}>Características</Text>
+          <Text style={styles.textWhite}>Características</Text>
+          <Text style={styles.textWhite}>Características</Text>
+          <Text style={styles.textWhite}>Características</Text>
+          <Text style={styles.textWhite}>Características</Text>
+          <Text style={styles.textWhite}>Características</Text><Text style={styles.textWhite}>Características</Text>
+          <Text style={styles.textWhite}>Características</Text>
+          <Text style={styles.textWhite}>Características</Text>
+          <Text style={styles.textWhite}>Características</Text>
+          <Text style={styles.textWhite}>Características</Text>
+          <Text style={styles.textWhite}>Características</Text><Text style={styles.textWhite}>Características</Text>
+          <Text style={styles.textWhite}>Características</Text>
+          <Text style={styles.textWhite}>Características</Text>
+          <Text style={styles.textWhite}>Características</Text>
+          <Text style={styles.textWhite}>Características</Text>
+          <Text style={styles.textWhite}>Características</Text><Text style={styles.textWhite}>Características</Text>
+          <Text style={styles.textWhite}>Características</Text>
+          <Text style={styles.textWhite}>Características</Text>
+          <Text style={styles.textWhite}>Características</Text>
+          <Text style={styles.textWhite}>Características</Text>
+          <Text style={styles.textWhite}>Características</Text><Text style={styles.textWhite}>Características</Text>
+          <Text style={styles.textWhite}>Características</Text>
+          <Text style={styles.textWhite}>Características</Text>
+          <Text style={styles.textWhite}>Características</Text>
+          <Text style={styles.textWhite}>Características</Text>
+          <Text style={styles.textWhite}>Características</Text>
+    {/* <View style={styles.container}>
         
           <Image style={DetailsStyles.FullBodyImage} source={{uri: character.Gallery.Category.CharacterGallery.FullBody}}/>
         
@@ -66,8 +92,8 @@ function CharacterDetails({route}) {
           <Text style={styles.textWhite}>Características</Text>
           <Text style={styles.textWhite}>Características</Text>
         </View>
+    </View> */}
       </ScrollView>
-    </View>
   );
 }
 

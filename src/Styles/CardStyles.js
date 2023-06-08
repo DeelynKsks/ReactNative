@@ -6,7 +6,7 @@ const windowWidth = Dimensions.get('window').width;
 
 export const cardStyles = ScaledSheet.create({
     cardContainer: {
-      width: moderateScale(183),
+      width: moderateScale(180),
       marginHorizontal: moderateScale(10),
       borderRadius: moderateScale(8),
       backgroundColor: '#000000',
@@ -29,7 +29,7 @@ export const cardStyles = ScaledSheet.create({
     },
     name: {
       fontFamily: 'Bloodcrowc',
-      fontSize: moderateScale(20),
+      fontSize: moderateScale(18),
       padding: moderateScale(8),  
       // marginVertical: 10,
       // textAlign: 'center',

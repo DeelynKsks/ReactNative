@@ -11,7 +11,7 @@ function Card(props) {
 
     const navigation = useNavigation();
 
-    const windowWidth = Dimensions.get('window').width;
+    // const windowWidth = Dimensions.get('window').width;
 
     const handlePress = () => {
       navigation.navigate('Character', { selectedName: data.Name});

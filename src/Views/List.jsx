@@ -53,10 +53,11 @@ function List() {
   const renderItem = ({ item }) => {    
     return(
       <Card
-      data={item}
-      // onDeleteFiltered={handleDeleteFiltered} // Asegúrate de pasar onDeleteFiltered aquí
-      onDelete={handleDeleteCard}
-      onPress={handleCardPress}/>
+        data={item}
+        // onDeleteFiltered={handleDeleteFiltered} // Asegúrate de pasar onDeleteFiltered aquí
+        onDelete={handleDeleteCard}
+        onPress={handleCardPress}
+      />
     )
   }
 
